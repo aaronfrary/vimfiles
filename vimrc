@@ -130,6 +130,7 @@ set mouse=
 
 " Reasonable default size for terminal
 set columns=90
+set lines=50
 
 " Keeps lines under 80 characters -- Good programming practice
 set textwidth=79
@@ -229,9 +230,9 @@ nmap <Leader>w <C-W>
 " Toggle Spell checking
 nnoremap <Leader>s :setlocal invspell<CR>
 
-" Very magic for easier regular expressions
-nnoremap / /\v
-cnoremap %s/ %s/\v
+" Very no-magic for more intuitive search
+nnoremap / /\V
+nnoremap ? ?\V
 
 " Make gf open the file in a new tab
 map gf :tabe <cfile><CR>
