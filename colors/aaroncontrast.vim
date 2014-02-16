@@ -64,14 +64,14 @@ hi Pmenu cterm=NONE ctermfg=11 ctermbg=236 gui=NONE guifg=#000000 guibg=#b2fe40
 
 " Syntax Hilighting
 hi Comment cterm=NONE ctermfg=60 ctermbg=NONE gui=Italic guifg=#939bed guibg=NONE
-hi Constant cterm=NONE ctermfg=208 ctermbg=NONE gui=NONE guifg=#bb40de guibg=NONE
+hi Constant cterm=NONE ctermfg=208 ctermbg=NONE gui=NONE guifg=#70a2fe guibg=NONE
 hi String cterm=NONE ctermfg=209 ctermbg=NONE gui=NONE guifg=#ed93c8 guibg=NONE
 hi Character cterm=NONE ctermfg=LightRed ctermbg=NONE gui=NONE guifg=#ed93c8 guibg=NONE
 hi Identifier cterm=NONE ctermfg=196 ctermbg=NONE gui=NONE guifg=#4ce2cc guibg=NONE
 hi Statement cterm=Bold ctermfg=125 ctermbg=NONE gui=NONE guifg=#f5901b guibg=NONE
 hi aaronAssignment cterm=NONE ctermfg=125 ctermbg=NONE gui=NONE guifg=#ecd440 guibg=NONE
 hi aaronEqualsAssignment cterm=Bold ctermfg=125 ctermbg=NONE gui=bold guifg=#f4dc40 guibg=NONE
-hi PreProc cterm=NONE ctermfg=34 ctermbg=NONE gui=NONE guifg=#4063de guibg=NONE
+hi PreProc cterm=NONE ctermfg=34 ctermbg=NONE gui=NONE guifg=#de4063 guibg=NONE
 hi Type cterm=NONE ctermfg=179 ctermbg=NONE gui=NONE guifg=#b2de40 guibg=NONE
 hi Special cterm=NONE ctermfg=196 ctermbg=NONE gui=NONE guifg=#e82a2a guibg=NONE
 hi texMath cterm=NONE ctermfg=196 ctermbg=NONE gui=NONE guifg=fg guibg=NONE
