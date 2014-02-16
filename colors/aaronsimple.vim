@@ -66,7 +66,7 @@ hi Pmenu cterm=NONE ctermfg=11 ctermbg=236 gui=NONE guifg=#000000 guibg=#b2fe40
 hi Comment cterm=NONE ctermfg=60 ctermbg=NONE gui=Italic guifg=#989898 guibg=NONE
 hi Constant cterm=Bold ctermfg=125 ctermbg=NONE gui=NONE guifg=#d1c295 guibg=NONE
 hi String cterm=NONE ctermfg=209 ctermbg=NONE gui=NONE guifg=#d9a7b4 guibg=NONE
-hi Identifier cterm=NONE ctermfg=196 ctermbg=NONE gui=underline guifg=fg guibg=NONE
+hi Identifier cterm=NONE ctermfg=196 ctermbg=NONE gui=NONE guifg=#9080d8 guibg=NONE
 hi Statement cterm=Bold ctermfg=125 ctermbg=NONE gui=NONE guifg=#debb40 guibg=NONE
 hi aaronAssignment cterm=NONE ctermfg=125 ctermbg=NONE gui=NONE guifg=#f5901b guibg=NONE
 hi aaronEqualsAssignment cterm=Bold ctermfg=125 ctermbg=NONE gui=bold guifg=#f5901b guibg=NONE
