@@ -130,7 +130,7 @@ set mouse=
 
 " Reasonable default size for terminal
 set columns=90
-set lines=50
+set lines=44
 
 " Keeps lines under 80 characters -- Good programming practice
 set textwidth=79
@@ -140,10 +140,12 @@ set textwidth=79
 set cmdheight=2
 
 " Display relative line numbers on the left (toggle with <Leader>n)
-set rnu
+if exists("rnu")
+  set rnu
+  nnoremap <silent> <Leader>N :set invrnu<CR>
+endif
 set numberwidth=2
 nnoremap <silent> <Leader>n :set invnumber<CR>
-nnoremap <silent> <Leader>N :set invrnu<CR>
 
 " Hilight cursor line (toggle horiz/vert with <Leader>c)
 set cursorline
