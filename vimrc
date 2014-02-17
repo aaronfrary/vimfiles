@@ -139,11 +139,7 @@ set textwidth=79
 " 'press <Enter> to continue'
 set cmdheight=2
 
-" Display relative line numbers on the left (toggle with <Leader>n)
-if exists("rnu")
-  set rnu
-  nnoremap <silent> <Leader>N :set invrnu<CR>
-endif
+" Display line numbers on the left (toggle with <Leader>n)
 set numberwidth=2
 nnoremap <silent> <Leader>n :set invnumber<CR>
 
