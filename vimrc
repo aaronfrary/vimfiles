@@ -205,7 +205,7 @@ augroup end
 " Map Y to act like D and C, i.e. to yank until EOL, rather than as yy.
 map Y y$
 
-" Center screan on IncSearch
+" Center screen on IncSearch
 map N Nzz
 map n nzz
 
@@ -279,11 +279,11 @@ colorscheme aaronsimple
 nnoremap <silent> <Leader>B :colorscheme aaroncontrast<CR>
 nnoremap <silent> <Leader>b :colorscheme aaronsimple<CR>
 
-" Some handy tricks I've picked up
-runtime aaronmacros
+" Some handy tricks
+runtime aaronmacros.vim
 
 " Plugins that don't work with Pathogen
-autocmd Filetype tex runtime auctex
+autocmd Filetype tex runtime auctex.vim
 
 " Source specific .vim files in working directory (must end in 'cfg.vim')
 for fname in split(glob("*cfg.vim"), "\n") + split(glob(".*cfg.vim"))
