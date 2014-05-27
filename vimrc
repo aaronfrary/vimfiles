@@ -228,6 +228,9 @@ nmap <Leader>w <C-W>
 " Toggle Spell checking
 nnoremap <Leader>s :setlocal invspell<CR>
 
+" Toggle Rainbow Parentheses
+nnoremap <Leader>r :RainbowParenthesesToggle<CR>
+
 " Very no-magic for more intuitive search
 nnoremap / /\V
 nnoremap ? ?\V
