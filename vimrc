@@ -94,7 +94,9 @@ set nostartofline
 
 " Don't allow selection past the end of the line. This prevents accidentally
 " yanking an unwanted newline.
-set selection=old
+"set selection=old
+" NEVERMIND, not compatible with paredit mode
+set selection=inclusive
 
 " Display the cursor position in the status line 
 set ruler
@@ -204,13 +206,13 @@ augroup end
 " {{{ Useful mappings
 "
 " Map Y to act like D and C, i.e. to yank until EOL, rather than as yy.
-map Y y$
+nnoremap Y y$
 
 " Center screen on IncSearch
 map N Nzz
 map n nzz
 
-" Better jump behavior: now ' goes to te exact mark location and
+" Better jump behavior: now ' goes to the exact mark location and
 " ` goes to the mark line
 nnoremap ' `
 nnoremap ` '
@@ -222,9 +224,6 @@ nnoremap <Leader><Space> <Esc>
 vnoremap <Leader><Space> <Esc>
 " <Leader> cancels commands
 onoremap <Leader> <Esc>
-
-" Use <Leader>w instead of <C-W> for window manipulation
-nmap <Leader>w <C-W>
 
 " Toggle Spell checking
 nnoremap <Leader>s :setlocal invspell<CR>
