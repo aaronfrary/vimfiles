@@ -8,6 +8,7 @@ inoremap jk <esc>`^
 
 " Important! Preface user-defined commands with <Space> = <Leader>
 let mapleader = " "
+let g:paredit_leader = ","
 
 " URL: http://vim.wikia.com/wiki/Example_vimrc
 " Authors: Aaron Graham-Horowitz
