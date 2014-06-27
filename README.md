@@ -1,5 +1,19 @@
 vimfiles
 ========
+Configuration files I use for the vim text editor. Does not include plugins
+that are easily accessible from github and work with pathogen.
 
-Personal vimrc, etc.  Feel free to take any inspiration you like.  If you want to use *all* of something,
-like a colorscheme, I'd appreciate it if you let me know.
+Installation
+------------
+
+##### Windows
+```
+cd $HOME
+git clone https://github.com/aaronsgh/vimfiles.git
+```
+
+##### Unix
+```
+cd
+git clone https://github.com/aaronsgh/vimfiles.git .vim
+```
