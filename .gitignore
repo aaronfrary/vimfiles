@@ -1,5 +1,14 @@
 
-bundle
-tmp
+autoload/
+!autoload/pathogen.vim
+bundle/
+doc/
+ftdetect/
+ftplugin/
+indent/
+r-plugin/
+syntax/
+tmp/
+.VimballRecord
 .netrwhist
-eclim
+eclim/

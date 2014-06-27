@@ -293,3 +293,5 @@ for fname in split(glob("*cfg.vim"), "\n") + split(glob(".*cfg.vim"))
   execute "source " . fnameescape(fname)
 endfor
 
+" }}}
+
