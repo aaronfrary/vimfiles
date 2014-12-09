@@ -265,9 +265,11 @@ augroup myGUI
   autocmd GUIEnter * set visualbell t_vb=
 augroup end
 if has('gui_running')
+  " Hide menu bar
+  set guioptions-=m
+  set lines=999 | set columns=112
   if has('gui_win32')
     set guifont=Consolas:h10:cANSI
-    set lines=999 | set columns=112
   else
     set guifont=Monospace\ 12
   endif
@@ -306,4 +308,6 @@ autocmd Filetype tex runtime auctex.vim
 for fname in split(glob("*cfg.vim"), "\n") + split(glob(".*cfg.vim"))
   execute "source " . fnameescape(fname)
 endfor
+
+" }}}
 
