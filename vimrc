@@ -273,6 +273,20 @@ if has('gui_running')
   endif
 endif
 
+" Special settings for coquille
+augroup coq
+  autocmd!
+  autocmd BufNewFile Goals setfiletype coquille
+  autocmd BufNewFile Infos setfiletype coquille
+  autocmd Filetype coq call coquille#FNMapping()
+  autocmd Filetype coq hi checkedByCoq guibg=#282830
+  autocmd Filetype coq hi sentToCoq guibg=#282850
+  autocmd Filetype coq let g:coquille_auto_move = 'true'
+  autocmd Filetype coq nnoremap K ?\v(Fixpoint\|Inductive\|Definition\|Scheme\|Ltac\|Example\|Lemma\|Theorem) <C-R><C-W><CR>zz
+augroup end
+
+
+
 " }}}
 "------------------------------------------------------------
 " {{{ Source a few files
