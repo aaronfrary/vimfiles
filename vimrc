@@ -140,7 +140,8 @@ set textwidth=79
 
 " Set the command window height to 2 lines, to avoid many cases of having to
 " 'press <Enter> to continue'
-set cmdheight=2
+" (turning this off for now, I need more screen real estate)
+set cmdheight=1
 
 " Display line numbers on the left (toggle with <Leader>n)
 set numberwidth=2

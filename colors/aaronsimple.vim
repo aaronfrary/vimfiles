@@ -1,6 +1,6 @@
 
 " Authors: Aaron Graham-Horowitz
-" Description: A simple dark color scheme for the gui.
+" Description: A simple, low-contrast dark color scheme for vim and gvim.
 
 " Boilerplate stuff
 set background=dark
@@ -35,13 +35,15 @@ hi Normal cterm=NONE ctermfg=255 ctermbg=234
 
 " Cursor
 hi Cursor gui=bold guifg=bg guibg=#de6c40
+hi Cursor cterm=NONE ctermfg=0 ctermbg=10
 
-" Matched indices
+" Matched indices (test {test} [] test)
 hi MatchParen guifg=bg guibg=#ccac40
+hi MatchParen cterm=NONE ctermfg=0 ctermbg=125
 
 " Visual mode
 hi Visual gui=inverse guibg=bg
-hi Visual cterm=NONE ctermfg=NONE ctermbg=232
+hi Visual cterm=NONE ctermfg=NONE ctermbg=0
 
 " Cursor line/column hilighting
 hi CursorLine guifg=NONE guibg=#1d1d25
@@ -51,11 +53,17 @@ hi CursorColumn cterm=NONE ctermfg=NONE ctermbg=235
 
 " Line numbering
 hi LineNr gui=NONE guifg=#3c3c4a guibg=NONE
+hi LineNr cterm=NONE ctermfg=237 ctermbg=NONE
 
 " Search Hilighting
 hi Search guifg=bg guibg=fg
 hi Search cterm=NONE ctermfg=233 ctermbg=141
 hi IncSearch guifg=bg guibg=#ccac40
+
+" Status bar / window splits
+hi StatusLine cterm=NONE ctermfg=0 ctermbg=240
+hi StatusLineNC cterm=NONE ctermfg=0 ctermbg=236
+hi VertSplit cterm=NONE ctermfg=0 ctermbg=NONE
 
 " Folds
 hi Folded gui=NONE guifg=#a4d8ff guibg=#556868
@@ -69,9 +77,6 @@ hi SignColumn cterm=NONE ctermfg=33 ctermbg=236
 
 " Popup menus
 hi Pmenu guifg=#000000 guibg=#b2fe40
-
-" 167 berry
-" 137 milk chocolate
 
 " Syntax Hilighting
 hi Comment gui=Italic guifg=#989898 guibg=NONE
