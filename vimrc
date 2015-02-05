@@ -1,6 +1,54 @@
 
-" Plugins Please
-call pathogen#infect()
+" Set 'nocompatible' to ward off unexpected things that your distro might
+" have made, as well as sanely reset options when re-sourcing .vimrc
+set nocompatible
+
+" {{{ Vundle for plugins
+" {{{ setup part 1
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+"Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+"Plugin 'user/L9', {'name': 'newL9'}
+" }}}
+Plugin 'jpalardy/vim-slime'
+" {{{ setup part 2
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+" }}}
+" }}}
 
 " Fundamental map: Escape = jj (some prefer jk)
 inoremap jj <esc>`^
@@ -27,18 +75,11 @@ let g:paredit_leader = ","
 "------------------------------------------------------------
 " {{{ Must have features
 "
-" Set 'nocompatible' to ward off unexpected things that your distro might
-" have made, as well as sanely reset options when re-sourcing .vimrc
-set nocompatible
-
 " One of the most important options to activate. Allows you to switch from an
 " unsaved buffer without saving it first. Also allows you to keep an undo
 " history for multiple files. Vim will complain if you try to quit without
 " saving, and swap files will keep you safe if your computer crashes.
 set hidden
-
-"  Allow for plugins that are filetype specific.
-filetype indent plugin on
 
 " Enable syntax highlighting
 syntax on
@@ -141,7 +182,7 @@ set textwidth=79
 " Set the command window height to 2 lines, to avoid many cases of having to
 " 'press <Enter> to continue'
 " (turning this off for now, I need more screen real estate)
-set cmdheight=1
+set cmdheight=2
 
 " Display line numbers on the left (toggle with <Leader>n)
 set numberwidth=2
@@ -225,6 +266,12 @@ nnoremap <Leader><Space> <Esc>
 vnoremap <Leader><Space> <Esc>
 " <Leader> cancels commands
 onoremap <Leader> <Esc>
+
+" Faster navigation of splits
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 " Toggle Spell checking
 nnoremap <Leader>s :setlocal invspell<CR>
@@ -311,4 +358,7 @@ for fname in split(glob("*cfg.vim"), "\n") + split(glob(".*cfg.vim"))
 endfor
 
 " }}}
+
+let g:slime_target="tmux"
+let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 

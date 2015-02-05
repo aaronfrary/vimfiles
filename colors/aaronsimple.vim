@@ -31,7 +31,7 @@ augroup end
 
 " Default
 hi Normal gui=NONE guifg=#e0e0e0 guibg=#17171d
-hi Normal cterm=NONE ctermfg=255 ctermbg=234
+hi Normal cterm=NONE ctermfg=252 ctermbg=233
 
 " Cursor
 hi Cursor gui=bold guifg=bg guibg=#de6c40
@@ -43,17 +43,17 @@ hi MatchParen cterm=NONE ctermfg=0 ctermbg=125
 
 " Visual mode
 hi Visual gui=inverse guibg=bg
-hi Visual cterm=NONE ctermfg=NONE ctermbg=0
+hi Visual cterm=inverse ctermfg=NONE ctermbg=NONE
 
 " Cursor line/column hilighting
 hi CursorLine guifg=NONE guibg=#1d1d25
-hi CursorLine cterm=NONE ctermfg=NONE ctermbg=235
+hi CursorLine cterm=NONE ctermfg=NONE ctermbg=234
 hi CursorColumn guifg=NONE guibg=#1d1d25
-hi CursorColumn cterm=NONE ctermfg=NONE ctermbg=235
+hi CursorColumn cterm=NONE ctermfg=NONE ctermbg=234
 
 " Line numbering
 hi LineNr gui=NONE guifg=#3c3c4a guibg=NONE
-hi LineNr cterm=NONE ctermfg=237 ctermbg=NONE
+hi LineNr cterm=NONE ctermfg=236 ctermbg=NONE
 
 " Search Hilighting
 hi Search guifg=bg guibg=fg
@@ -61,7 +61,7 @@ hi Search cterm=NONE ctermfg=233 ctermbg=141
 hi IncSearch guifg=bg guibg=#ccac40
 
 " Status bar / window splits
-hi StatusLine cterm=NONE ctermfg=0 ctermbg=240
+hi StatusLine cterm=NONE ctermfg=0 ctermbg=239
 hi StatusLineNC cterm=NONE ctermfg=0 ctermbg=236
 hi VertSplit cterm=NONE ctermfg=0 ctermbg=NONE
 
