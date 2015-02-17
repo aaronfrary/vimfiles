@@ -32,6 +32,7 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'user/L9', {'name': 'newL9'}
 " }}}
 Plugin 'jpalardy/vim-slime'
+Bundle 'christoomey/vim-tmux-navigator'
 " {{{ setup part 2
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -57,6 +58,10 @@ inoremap jk <esc>`^
 " Important! Preface user-defined commands with <Space> = <Leader>
 let mapleader = " "
 let g:paredit_leader = ","
+
+" Settings for plugins
+let g:slime_target="tmux"
+let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 
 " URL: http://vim.wikia.com/wiki/Example_vimrc
 " Authors: Aaron Graham-Horowitz
@@ -173,8 +178,9 @@ set guicursor=a:blinkon0
 set mouse=
 
 " Reasonable default size for terminal
-set columns=90
-set lines=44
+" (removed because of problems with tmux panes)
+"set columns=90
+"set lines=44
 
 " Keeps lines under 80 characters -- Good programming practice
 set textwidth=79
@@ -358,7 +364,4 @@ for fname in split(glob("*cfg.vim"), "\n") + split(glob(".*cfg.vim"))
 endfor
 
 " }}}
-
-let g:slime_target="tmux"
-let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 
