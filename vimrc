@@ -3,52 +3,63 @@
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
 
-" {{{ Vundle for plugins
-" {{{ setup part 1
-filetype off
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Check environment
+if !empty(glob(expand("~/vimfiles/")))
+  let s:vimdir=expand("~/vimfiles/")
+else
+  let s:vimdir=expand("~/.vim/")
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+if !empty(glob(s:vimdir . "bundle/Vundle.vim/README.md"))
+  " {{{ Vundle for plugins
+  " {{{ setup part 1
+  filetype off
+  " set the runtime path to include Vundle and initialize
+  execute 'set rtp+=' . s:vimdir . 'bundle/Vundle.vim'
+  call vundle#begin()
+  " alternatively, pass a path where Vundle should install plugins
+  "call vundle#begin('~/some/path/here')
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
-" }}}
-Plugin 'jpalardy/vim-slime'
-" {{{ setup part 2
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-" }}}
-" }}}
+  " let Vundle manage Vundle, required
+  Plugin 'gmarik/Vundle.vim'
+
+  " The following are examples of different formats supported.
+  " Keep Plugin commands between vundle#begin/end.
+  " plugin on GitHub repo
+  "Plugin 'tpope/vim-fugitive'
+  " plugin from http://vim-scripts.org/vim/scripts.html
+  "Plugin 'L9'
+  " Git plugin not hosted on GitHub
+  "Plugin 'git://git.wincent.com/command-t.git'
+  " git repos on your local machine (i.e. when working on your own plugin)
+  "Plugin 'file:///home/gmarik/path/to/plugin'
+  " The sparkup vim script is in a subdirectory of this repo called vim.
+  " Pass the path to set the runtimepath properly.
+  "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+  " Avoid a name conflict with L9
+  "Plugin 'user/L9', {'name': 'newL9'}
+  " }}}
+  Plugin 'jpalardy/vim-slime'
+  Plugin 'vim-scripts/paredit.vim'
+  Plugin 'kien/rainbow_parentheses.vim'
+  " {{{ setup part 2
+  " All of your Plugins must be added before the following line
+  call vundle#end()            " required
+  " To ignore plugin indent changes, instead use:
+  "filetype plugin on
+  "
+  " Brief help
+  " :PluginList       - lists configured plugins
+  " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+  " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+  " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+  "
+  " see :h vundle for more details or wiki for FAQ
+  " Put your non-Plugin stuff after this line
+  " }}}
+  " }}}
+endif
+filetype plugin indent on
 
 " Fundamental map: Escape = jj (some prefer jk)
 inoremap jj <esc>`^
@@ -298,15 +309,6 @@ nnoremap <C-y> 3<C-y>
 "------------------------------------------------------------
 " {{{ Miscellaneous Conditionals
 "
-" Set appropriate color scheme
-if &term =~? 'mlterm\|xterm'
-  set t_Co=256
-elseif &term =~? 'win32'
-  set shell=powershell
-  set shellcmdflag=-command
-  set lines=999 | set columns=112
-endif
-
 " I set very little here, so not worth a separate gvimrc.
 augroup myGUI
   autocmd!
@@ -334,8 +336,6 @@ augroup coq
   autocmd Filetype coq let g:coquille_auto_move = 'true'
   autocmd Filetype coq nnoremap K ?\v(Fixpoint\|Inductive\|Definition\|Scheme\|Ltac\|Example\|Lemma\|Theorem) <C-R><C-W><CR>zz
 augroup end
-
-
 
 " }}}
 "------------------------------------------------------------
