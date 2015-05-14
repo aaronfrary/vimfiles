@@ -6,17 +6,21 @@ set nocompatible
 " Check environment
 if !empty(glob(expand("~/vimfiles/")))
   let s:vimdir=expand("~/vimfiles/")
+  let s:bundledir=expand("~/vimfiles/bundle/")
 else
   let s:vimdir=expand("~/.vim/")
+  let s:bundledir=expand("~/.vim/bundle/")
 endif
+
+"let s:bundledir = s:vimdir . 'bundle/'
 
 if !empty(glob(s:vimdir . "bundle/Vundle.vim/README.md"))
   " {{{ Vundle for plugins
   " {{{ setup part 1
   filetype off
   " set the runtime path to include Vundle and initialize
-  execute 'set rtp+=' . s:vimdir . 'bundle/Vundle.vim'
-  call vundle#begin()
+  execute 'set rtp+=' . s:bundledir . 'Vundle.vim'
+  call vundle#begin(s:bundledir)
   " alternatively, pass a path where Vundle should install plugins
   "call vundle#begin('~/some/path/here')
 
@@ -40,7 +44,7 @@ if !empty(glob(s:vimdir . "bundle/Vundle.vim/README.md"))
   "Plugin 'user/L9', {'name': 'newL9'}
   " }}}
   Plugin 'jpalardy/vim-slime'
-  Bundle 'christoomey/vim-tmux-navigator'
+  Plugin 'christoomey/vim-tmux-navigator'
   Plugin 'vim-scripts/paredit.vim'
   Plugin 'kien/rainbow_parentheses.vim'
   Plugin 'kchmck/vim-coffee-script'
