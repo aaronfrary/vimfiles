@@ -43,6 +43,8 @@ if !empty(glob(s:vimdir . "bundle/Vundle.vim/README.md"))
   Bundle 'christoomey/vim-tmux-navigator'
   Plugin 'vim-scripts/paredit.vim'
   Plugin 'kien/rainbow_parentheses.vim'
+  Plugin 'kchmck/vim-coffee-script'
+  Plugin 'scrooloose/syntastic'
   " {{{ setup part 2
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
@@ -330,6 +332,16 @@ if has('gui_running')
     set guifont=Monospace\ 12
   endif
 endif
+
+" Settings related to Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Special settings for coquille
 augroup coq
