@@ -255,15 +255,8 @@ set fdc=1
 set foldmethod=marker
 augroup folding
   autocmd!
-" Auto-fold based on indentation, good for languages that don't use braces.
-  autocmd Filetype py set foldmethod=indent
-  autocmd Filetype ruby set foldmethod=indent
-  autocmd Filetype coffee set foldmethod=indent
 " Any languages I use that require braces go here.
-  autocmd Filetype c set foldmethod=syntax
-  autocmd Filetype php set foldmethod=syntax
-  autocmd Filetype java set foldmethod=syntax
-  autocmd Filetype js set foldmethod=syntax
+  autocmd Filetype c,php,java,js set foldmethod=syntax
 augroup end
 
 " }}}
