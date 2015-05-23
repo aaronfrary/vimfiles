@@ -74,11 +74,6 @@ inoremap jk <esc>`^
 
 " Important! Preface user-defined commands with <Space> = <Leader>
 let mapleader = " "
-let g:paredit_leader = ","
-
-" Settings for plugins
-let g:slime_target="tmux"
-let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 
 " URL: http://vim.wikia.com/wiki/Example_vimrc
 " Authors: Aaron Graham-Horowitz
@@ -94,7 +89,6 @@ let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 " http://vim.wikia.com/wiki/Vim_on_Freenode, which can be found at
 " http://vim.wikia.com/wiki/Example_vimrc.
 
-"------------------------------------------------------------
 " {{{ Must have features
 "
 " One of the most important options to activate. Allows you to switch from an
@@ -161,11 +155,11 @@ set nostartofline
 " NEVERMIND, not compatible with paredit mode
 set selection=inclusive
 
-" Display the cursor position in the status line 
-set ruler
-
 " Show window title in xterm
 set title
+
+" Emulate standard status line with 'ruler' set
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " Always display the status line, even if only one window is displayed
 set laststatus=2
@@ -330,16 +324,6 @@ if has('gui_running')
   endif
 endif
 
-" Settings related to Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " Special settings for coquille
 augroup coq
   autocmd!
@@ -372,5 +356,21 @@ for fname in split(glob("*cfg.vim"), "\n") + split(glob(".*cfg.vim"))
   execute "source " . fnameescape(fname)
 endfor
 
+" }}}
+"------------------------------------------------------------
+" {{{ Settings for plugins
+let g:paredit_leader = ","
+let g:slime_target="tmux"
+let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
+
+" Settings related to Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 " }}}
 
