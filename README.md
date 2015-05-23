@@ -1,7 +1,6 @@
 vimfiles
 ========
-Configuration files I use for the vim text editor. Does not include plugins
-that are easily accessible from github and work with pathogen.
+Configuration files I use for the vim text editor.
 
 Installation
 ------------
@@ -17,14 +16,3 @@ git clone https://github.com/aaronsgh/vimfiles.git
 cd
 git clone https://github.com/aaronsgh/vimfiles.git .vim
 ```
-
-### Plugins
-Some of the plugins I use.
-
-* For Lisp:
-  * [Vim Slime] (https://github.com/jpalardy/vim-slime)
-  * [Rainbow Parentheses] (https://github.com/kien/rainbow_parentheses.vim)
-  * [Paredit] (https://github.com/vim-scripts/paredit.vim)
-  * [Fireplace] (https://github.com/tpope/vim-fireplace)
-* For Coq:
-  * [Coquille] (https://github.com/the-lambda-church/coquille)
