@@ -5,16 +5,12 @@ set nocompatible
 
 " Check environment
 if !empty(glob(expand("~/vimfiles/")))
-  let s:vimdir=expand("~/vimfiles/")
   let s:bundledir=expand("~/vimfiles/bundle/")
 else
-  let s:vimdir=expand("~/.vim/")
   let s:bundledir=expand("~/.vim/bundle/")
 endif
 
-"let s:bundledir = s:vimdir . 'bundle/'
-
-if !empty(glob(s:vimdir . "bundle/Vundle.vim/README.md"))
+if !empty(glob(s:bundledir . "Vundle.vim/README.md"))
   " {{{ Vundle for plugins
   " {{{ setup part 1
   filetype off
@@ -26,28 +22,13 @@ if !empty(glob(s:vimdir . "bundle/Vundle.vim/README.md"))
 
   " let Vundle manage Vundle, required
   Plugin 'gmarik/Vundle.vim'
-
-  " The following are examples of different formats supported.
-  " Keep Plugin commands between vundle#begin/end.
-  " plugin on GitHub repo
-  "Plugin 'tpope/vim-fugitive'
-  " plugin from http://vim-scripts.org/vim/scripts.html
-  "Plugin 'L9'
-  " Git plugin not hosted on GitHub
-  "Plugin 'git://git.wincent.com/command-t.git'
-  " git repos on your local machine (i.e. when working on your own plugin)
-  "Plugin 'file:///home/gmarik/path/to/plugin'
-  " The sparkup vim script is in a subdirectory of this repo called vim.
-  " Pass the path to set the runtimepath properly.
-  "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-  " Avoid a name conflict with L9
-  "Plugin 'user/L9', {'name': 'newL9'}
   " }}}
   Plugin 'jpalardy/vim-slime'
   Plugin 'christoomey/vim-tmux-navigator'
   Plugin 'vim-scripts/paredit.vim'
   Plugin 'kien/rainbow_parentheses.vim'
   Plugin 'kchmck/vim-coffee-script'
+  Plugin 'rust-lang/rust.vim'
   Plugin 'scrooloose/syntastic'
   " {{{ setup part 2
   " All of your Plugins must be added before the following line
@@ -364,7 +345,7 @@ let g:slime_target="tmux"
 let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 
 " Settings related to Syntastic
-if !empty(glob(s:vimdir . "bundle/Vundle.vim/README.md"))
+if !empty(glob(s:bundledir . "Vundle.vim/README.md"))
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
   set statusline+=%*
