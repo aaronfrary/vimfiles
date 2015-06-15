@@ -10,25 +10,6 @@ if exists("syntax_on")
 endif
 let g:colors_name = "aaronsimple"
 
-" Distinguish assignment from other operations, to prevent things like
-" if (x = y)
-" Works for most languages but BE CAREFUL
-highlight link aaronAssignment Operator
-highlight link aaronEqualsAssignment Operator
-highlight link aaronCompare Operator
-augroup aaronsyntax
-  autocmd!
-  autocmd BufNewFile,BufRead * syn match aaronEqualsAssignment "\v\="
-  autocmd BufNewFile,BufRead * syn match aaronEqualsAssignment "\v\-\="
-  autocmd BufNewFile,BufRead * syn match aaronEqualsAssignment "\v\+\="
-  autocmd BufNewFile,BufRead * syn match aaronAssignment "\v\-\-"
-  autocmd BufNewFile,BufRead * syn match aaronAssignment "\v\+\+"
-  autocmd BufNewFile,BufRead * syn match aaronCompare "\v\=\="
-  autocmd BufNewFile,BufRead * syn match aaronCompare "\v\!\="
-  autocmd BufNewFile,BufRead * syn match aaronCompare "\v\>\="
-  autocmd BufNewFile,BufRead * syn match aaronCompare "\v\<\="
-augroup end
-
 " -- Terminal colors --
 
 " Default
@@ -77,8 +58,6 @@ hi Identifier cterm=NONE ctermfg=68 ctermbg=NONE
 hi Function cterm=NONE ctermfg=68 ctermbg=NONE
 
 hi Statement cterm=NONE ctermfg=221 ctermbg=NONE
-hi aaronAssignment cterm=NONE ctermfg=214 ctermbg=NONE
-hi aaronEqualsAssignment cterm=NONE ctermfg=208 ctermbg=NONE
 
 hi PreProc cterm=NONE ctermfg=140 ctermbg=NONE
 
@@ -131,8 +110,6 @@ hi Constant gui=NONE guifg=#d1c295 guibg=NONE
 hi String gui=NONE guifg=#d9a7b4 guibg=NONE
 hi Identifier gui=NONE guifg=#9080d8 guibg=NONE
 hi Statement gui=NONE guifg=#debb40 guibg=NONE
-hi aaronAssignment gui=NONE guifg=#f5901b guibg=NONE
-hi aaronEqualsAssignment gui=Bold guifg=#f5901b guibg=NONE
 hi PreProc gui=NONE guifg=#4063de guibg=NONE
 hi Type gui=NONE guifg=#a5d195 guibg=NONE
 hi Special gui=NONE guifg=#da5b2a guibg=NONE
