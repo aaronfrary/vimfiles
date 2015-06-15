@@ -66,16 +66,28 @@ hi FoldColumn cterm=NONE ctermfg=33 ctermbg=236
 hi SignColumn cterm=NONE ctermfg=33 ctermbg=236
 
 " Syntax Hilighting
-hi Comment cterm=NONE ctermfg=248 ctermbg=NONE
+hi Comment cterm=italic ctermfg=248 ctermbg=NONE
+
 hi Constant cterm=NONE ctermfg=187 ctermbg=NONE
 hi String cterm=NONE ctermfg=181 ctermbg=NONE
+hi Character cterm=NONE ctermfg=181 ctermbg=NONE
+hi Boolean cterm=NONE ctermfg=181 ctermbg=NONE
+
 hi Identifier cterm=NONE ctermfg=68 ctermbg=NONE
+hi Function cterm=NONE ctermfg=68 ctermbg=NONE
+
 hi Statement cterm=NONE ctermfg=221 ctermbg=NONE
 hi aaronAssignment cterm=NONE ctermfg=214 ctermbg=NONE
 hi aaronEqualsAssignment cterm=NONE ctermfg=208 ctermbg=NONE
-hi PreProc cterm=NONE ctermfg=68 ctermbg=NONE
+
+hi PreProc cterm=NONE ctermfg=140 ctermbg=NONE
+
 hi Type cterm=NONE ctermfg=77 ctermbg=NONE
+
 hi Special cterm=NONE ctermfg=167 ctermbg=NONE
+
+hi Error cterm=bold
+hi Todo cterm=bold
 
 
 " -- GUI colors --
