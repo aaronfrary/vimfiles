@@ -1,6 +1,6 @@
 vimfiles
 ========
-Configuration files I use for the vim text editor.
+Configuration file(s) I use for the vim text editor.
 
 Installation
 ------------
