@@ -40,7 +40,6 @@ call plug#begin()
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'jpalardy/vim-slime'
   let g:slime_target="tmux"
-  let g:slime_default_config={"socket_name": "default", "target_pane": "1"}
 
   " Press v over and over again to expand selection
   Plug 'terryma/vim-expand-region'
