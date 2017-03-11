@@ -104,4 +104,14 @@ nnoremap <c-l> <c-w>l
 " Toggle Spell checking
 nnoremap <Leader>s :setlocal invspell<CR>
 
+" LaTeX Preview (using pdflatex and Skim on MacOS X)
+" First command compiles; second opens the pdf.
+augroup latex_preview
+  autocmd!
+  autocmd FileType tex nnoremap <Leader><CR>
+        \ :w \| let x=system('pdflatex ' . expand('%:t'))<CR>
+  autocmd FileType tex nnoremap <Leader>=
+        \ :let x=system('open -a Skim ' . expand('%:r') . '.pdf &')<CR>
+augroup END
+
 colorscheme mombat
