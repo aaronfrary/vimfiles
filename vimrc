@@ -74,6 +74,9 @@ call plug#end()
 inoremap jj <esc>`^
 inoremap jk <esc>`^
 
+" Insert literal tab with Shift + Tab
+inoremap <S-Tab> <C-V><Tab>
+
 " Plugin maps
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>i :CtrlPBuffer<CR>
