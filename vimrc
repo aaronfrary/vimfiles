@@ -1,4 +1,4 @@
-" Author: Aaron Graham-Horowitz <aaron@aaronsgh.com>
+" Author: Aaron Frary <af@aaronfrary.com>
 
 " Are we running Windows or Unix?
 if !empty(glob(expand('~/vimfiles/')))
