@@ -25,7 +25,9 @@ call plug#begin()
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-repeat'
   Plug 'sjl/vitality.vim'
+  Plug 'editorconfig/editorconfig-vim'
   Plug 'vim-scripts/IndexedSearch'
+  Plug 'airblade/vim-gitgutter'
 
   " Navigation (files, buffers, git, repls, etc.)
   Plug 'kien/ctrlp.vim'
