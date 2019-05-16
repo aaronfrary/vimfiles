@@ -45,9 +45,8 @@ call plug#begin()
   " Show git diff in left column
   Plug 'airblade/vim-gitgutter'
 
-  " :Ag [options] {pattern} [{directory}]
-  " Requires https://github.com/ggreer/the_silver_searcher
-  Plug 'rking/ag.vim'
+  " Sets cwd to project root automatically
+  Plug 'airblade/vim-rooter'
 
   " Improvements to netrw directory browser
   Plug 'tpope/vim-vinegar'
@@ -55,8 +54,9 @@ call plug#begin()
   " :Rename {new_filename}
   Plug 'danro/rename.vim'
 
-  " Sets cwd to project root automatically
-  Plug 'airblade/vim-rooter'
+  " :Ag [options] {pattern} [{directory}]
+  " Requires https://github.com/ggreer/the_silver_searcher
+  Plug 'rking/ag.vim'
 
   " Press v over and over again to expand selection
   Plug 'terryma/vim-expand-region'
