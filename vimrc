@@ -20,21 +20,48 @@ let maplocalleader = ","
 " Install single threaded for safety, can remove if too slow.
 let g:plug_threads=1
 call plug#begin()
+
+  " Sensible defaults
   Plug 'aaronsgh/vimrc'
+
+  " Language pack
   Plug 'sheerun/vim-polyglot'
+
+  " Set indentation automatically
   Plug 'tpope/vim-sleuth'
+
+  " Make . command more consistent
   Plug 'tpope/vim-repeat'
+
+  " Improve iTerm2 integration
   Plug 'sjl/vitality.vim'
+
+  " Support for .editorconfig files (https://editorconfig.org)
   Plug 'editorconfig/editorconfig-vim'
+
+  " Show index of matches when searching
   Plug 'vim-scripts/IndexedSearch'
+
+  " Show git diff in left column
   Plug 'airblade/vim-gitgutter'
 
-  " Navigation (files, buffers, git, repls, etc.)
+  " :Ag [options] {pattern} [{directory}]
+  " Requires https://github.com/ggreer/the_silver_searcher
   Plug 'rking/ag.vim'
+
+  " To be removed
   Plug 'jlanzarotta/bufexplorer'
+
+  " Improvements to netrw directory browser
   Plug 'tpope/vim-vinegar'
+
+  " To be removed
   Plug 'tpope/vim-fugitive'
+
+  " :Rename {new_filename}
   Plug 'danro/rename.vim'
+
+  " Sets cwd to project root automatically
   Plug 'airblade/vim-rooter'
 
   " Press v over and over again to expand selection
