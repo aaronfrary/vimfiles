@@ -49,14 +49,8 @@ call plug#begin()
   " Requires https://github.com/ggreer/the_silver_searcher
   Plug 'rking/ag.vim'
 
-  " To be removed
-  Plug 'jlanzarotta/bufexplorer'
-
   " Improvements to netrw directory browser
   Plug 'tpope/vim-vinegar'
-
-  " To be removed
-  Plug 'tpope/vim-fugitive'
 
   " :Rename {new_filename}
   Plug 'danro/rename.vim'
