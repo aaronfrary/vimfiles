@@ -30,7 +30,6 @@ call plug#begin()
   Plug 'airblade/vim-gitgutter'
 
   " Navigation (files, buffers, git, repls, etc.)
-  Plug 'kien/ctrlp.vim'
   Plug 'rking/ag.vim'
   Plug 'jlanzarotta/bufexplorer'
   Plug 'tpope/vim-vinegar'
@@ -78,10 +77,6 @@ inoremap jk <esc>`^
 
 " Insert literal tab with Shift + Tab
 inoremap <S-Tab> <C-V><Tab>
-
-" Plugin maps
-nnoremap <Leader>o :CtrlP<CR>
-nnoremap <Leader>i :CtrlPBuffer<CR>
 
 " <Leader> cancels commands
 onoremap <Leader> <Esc>
