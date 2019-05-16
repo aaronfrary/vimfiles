@@ -37,11 +37,6 @@ call plug#begin()
   Plug 'danro/rename.vim'
   Plug 'airblade/vim-rooter'
 
-  " tmux navigation
-  Plug 'christoomey/vim-tmux-navigator'
-  Plug 'jpalardy/vim-slime'
-  let g:slime_target="tmux"
-
   " Press v over and over again to expand selection
   Plug 'terryma/vim-expand-region'
   vmap v <Plug>(expand_region_expand)
