@@ -13,9 +13,6 @@ call plug#begin()
   " Language pack
   Plug 'sheerun/vim-polyglot'
 
-  " Set indentation automatically
-  Plug 'tpope/vim-sleuth'
-
   " Make . command more consistent
   Plug 'tpope/vim-repeat'
 
