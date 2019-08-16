@@ -37,9 +37,15 @@ call plug#begin()
   " :Rename {new_filename}
   Plug 'danro/rename.vim'
 
-  " :Ag [options] {pattern} [{directory}]
-  " Requires https://github.com/ggreer/the_silver_searcher
-  Plug 'rking/ag.vim'
+  " Run ack or ag search tools from Vim
+  " :Ack [options] {pattern} [{directories}]
+  Plug 'mileszs/ack.vim'
+  if executable('ag')
+    let g:ackprg='ag --vimgrep'
+  endif
+  cnoreabbrev Ack Ack!
+  cnoreabbrev ack Ack!
+  cnoreabbrev ag Ack!
 
   " Press v over and over again to expand selection
   Plug 'terryma/vim-expand-region'
