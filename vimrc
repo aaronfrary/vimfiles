@@ -1,19 +1,5 @@
 " Author: Aaron Frary <af@aaronfrary.com>
 
-" Are we running Windows or Unix?
-if !empty(glob(expand('~/vimfiles/')))
-  let s:vimdir=expand('~/vimfiles/')
-endif
-if !empty(glob(expand('~/.vim/')))
-  let s:vimdir=expand('~/.vim/')
-endif
-" Auto-install vim-plug
-if empty(glob(s:vimdir . 'autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
-endif
-
 let mapleader = "\<Space>"
 let maplocalleader = ","
 

@@ -1,6 +1,6 @@
 vimfiles
 ========
-Configuration file(s) I use for the vim text editor.
+Configuration files I use for the vim text editor. Neovim is also supported.
 
 Installation
 ------------
@@ -16,3 +16,13 @@ git clone https://github.com/aaronsgh/vimfiles.git
 cd
 git clone https://github.com/aaronsgh/vimfiles.git .vim
 ```
+
+###### Neovim
+```
+cd ~/.config
+git clone https://github.com/aaronsgh/vimfiles.git nvim
+```
+
+#### Plugins
+Install [vim-plug](https://github.com/junegunn/vim-plug) and run `:PlugInstall`
+in vim.
