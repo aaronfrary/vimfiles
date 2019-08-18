@@ -135,8 +135,8 @@ endfunction
 
 " Miscellaneous shortcuts
 
-" Clear search highlighting
-nnoremap <silent> <Leader>l :nohl<C-L><CR>
+" Clear search highlighting and re-draw the screen
+nnoremap <silent> <Leader>l :nohl<CR><C-L>
 
 " Easy clipboard
 vmap <Leader>y "+y
