@@ -1,0 +1,14 @@
+{
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "➡",
+  "diagnostic.infoSign": "•",
+  "diagnostic.hintSign": "•",
+  "diagnostic.checkCurrentLine": true,
+  "suggest.autoTrigger": "trigger",
+  "languageserver": {
+    "reason": {
+      "command": "reason-language-server",
+      "filetypes": ["reason"]
+    }
+  }
+}

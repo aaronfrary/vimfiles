@@ -13,6 +13,9 @@ call plug#begin()
   " Language pack
   Plug 'sheerun/vim-polyglot'
 
+  " Intellisense engine + Language Server Protocol support
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
   " Make . command more consistent
   Plug 'tpope/vim-repeat'
 
@@ -80,16 +83,59 @@ call plug#end()
 inoremap jj <esc>`^
 inoremap jk <esc>`^
 
-" Insert literal tab with Shift + Tab
-inoremap <S-Tab> <C-V><Tab>
-
 " <Leader> cancels commands
 onoremap <Leader> <Esc>
 " <Leader><Leader> is jj for other modes
 nnoremap <Leader><Space> <Esc>
 vnoremap <Leader><Space> <Esc>
 
-" Clear search hilighting
+" Always show sign column
+set signcolumn=yes
+
+" Configure Coc
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <tab>
+      \ pumvisible() ? "\<c-n>" :
+      \ <SID>check_back_space() ? "\<tab>" :
+      \ coc#refresh()
+inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Navigate diagnostics
+nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev)
+nmap <silent> <Leader>j <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Miscellaneous shortcuts
+
+" Clear search highlighting
 nnoremap <silent> <Leader>l :nohl<C-L><CR>
 
 " Easy clipboard
