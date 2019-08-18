@@ -92,7 +92,11 @@ vnoremap <Leader><Space> <Esc>
 " Always show sign column
 set signcolumn=yes
 
-" Configure Coc
+" Use \{\{\{ as fold markers and show folds on the left.
+set foldmethod=marker
+set fdc=1
+
+"" Configure Coc
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -133,7 +137,7 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Miscellaneous shortcuts
+"" Miscellaneous shortcuts
 
 " Clear search highlighting and re-draw the screen
 nnoremap <silent> <Leader>l :nohl<CR><C-L>
@@ -145,6 +149,9 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+
+" Visually select the text that was last edited/pasted (Vimcast#26).
+noremap gV `[v`]
 
 " Faster navigation of splits
 nnoremap <c-j> <c-w>j
