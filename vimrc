@@ -16,6 +16,9 @@ call plug#begin()
   " Intellisense engine + Language Server Protocol support
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+  " Syntax highlighting for jsonc.
+  Plug 'neoclide/jsonc.vim'
+
   " Make . command more consistent
   Plug 'tpope/vim-repeat'
 
