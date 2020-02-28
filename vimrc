@@ -79,6 +79,12 @@ call plug#begin()
   let g:airline_symbols.whitespace='Ξ'
 call plug#end()
 
+" Set filetypes for special files.
+augroup special_files
+  autocmd!
+  au BufRead,BufNewFile tsconfig.json set filetype=jsonc
+augroup END
+
 " Fundamental map: Escape = jj (or jk)
 inoremap jj <esc>`^
 inoremap jk <esc>`^
