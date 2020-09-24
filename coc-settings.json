@@ -10,5 +10,8 @@
       "command": "reason-language-server",
       "filetypes": ["reason"]
     }
-  }
+  },
+  "solargraph.checkGemVersion": false,
+  "solargraph.useBundler": true,
+  "solargraph.diagnostics": true
 }
