@@ -12,6 +12,7 @@ call plug#begin()
 
   " Language pack
   Plug 'sheerun/vim-polyglot'
+  Plug 'andreshazard/vim-freemarker'
 
   " Intellisense engine + Language Server Protocol support
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
