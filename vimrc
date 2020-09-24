@@ -8,7 +8,7 @@ let g:plug_threads=1
 call plug#begin()
 
   " Sensible defaults
-  Plug 'aaronsgh/vimrc'
+  Plug 'aaronfrary/vimrc'
 
   " Language pack
   Plug 'sheerun/vim-polyglot'
@@ -66,7 +66,7 @@ call plug#begin()
   Plug 'michaeljsmith/vim-indent-object'
 
   " Colorscheme
-  Plug 'aaronsgh/mombat.vim'
+  Plug 'aaronfrary/mombat.vim'
 
   " Fancy prompt
   Plug 'bling/vim-airline'
