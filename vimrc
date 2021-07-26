@@ -177,7 +177,7 @@ nnoremap <Leader>s :setlocal invspell<CR>
 augroup latex_preview
   autocmd!
   autocmd FileType tex nnoremap <Leader><CR>
-        \ :w \| let x=system('pdflatex -output-directory ' . expand('%:p:h') . ' ' . @%)<CR>
+        \ :w \| !cd %:h && pdflatex %:t<CR>
   autocmd FileType tex nnoremap <Leader>=
         \ :let x=system('open -a Skim ' . expand('%:r') . '.pdf &')<CR>
 augroup END
