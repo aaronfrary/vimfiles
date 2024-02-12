@@ -108,22 +108,24 @@ set fdc=1
 
 "" Configure Coc
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <tab>
-      \ pumvisible() ? "\<c-n>" :
-      \ <SID>check_back_space() ? "\<tab>" :
-      \ coc#refresh()
-inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
+" Use <tab> and <S-tab> to navigate completion list.
+" (Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin)
 
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+  return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
+" Insert <tab> when previous text is space, refresh completion if not.
+inoremap <silent><expr> <TAB>
+  \ coc#pum#visible() ? coc#pum#next(1):
+  \ CheckBackspace() ? "\<Tab>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Navigate diagnostics
 nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev)
